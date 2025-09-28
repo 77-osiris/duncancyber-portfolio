@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Duncan Cyber · Portfolio</title>
   <meta name="description" content="Cyber security portfolio of Stewart Duncan: projects, write-ups, and contact." />
-  <link rel="icon" type="image/png" href="assets/duncan_crest_neon.png">
+  <link rel="icon" type="image/png" href="assets/duncan_crest_neon.png?v=2">
   <style>
     :root{
       --bg:#0b0f12; --card:#12171c; --muted:#9aa4ad; --text:#e8eef2; --accent:#00e5b5; --accent-2:#64ffda;
@@ -110,45 +110,28 @@
 
       <!-- FORM OPTION A (Formspree) -->
       <!-- Replace action URL after you create a Formspree form -->
-      <form id="fs-form" action="https://formspree.io/f/yourFormID" method="POST">
+      <form id="php-form" action="contact.php" method="POST">
         <input type="text" name="name" placeholder="Your name" required />
-        <input type="email" name="_replyto" placeholder="Your email" required />
+        <input type="email" name="email" placeholder="Your email" required />
         <textarea name="message" placeholder="Your message..." required></textarea>
-        <input type="hidden" name="_subject" value="Portfolio contact" />
         <button class="btn accent" type="submit">Send message</button>
         <div id="form-status" aria-live="polite"></div>
       </form>
-
       <!-- PHP-->
     </section>
+    <script>
+    const f=document.getElementById('php-form'), s=document.getElementById('form-status');
+    f.addEventListener('submit', async (e)=>{
+      e.preventDefault(); s.textContent='Sending…';
+      try{
+        const r = await fetch(f.action, {method:'POST', body:new FormData(f)});
+        if(r.ok){ f.reset(); s.innerHTML='<span class="ok">Thanks — message sent.</span>'; }
+        else { s.innerHTML='<span class="err">Send failed. Email me instead.</span>'; }
+      }catch{ s.innerHTML='<span class="err">Network error.</span>'; }
+  });
+  </script>
 
     <div class="footer">© <span id="y"></span> Stewart Duncan · duncancyber.tech</div>
   </div>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // lightweight success/fail feedback for Formspree
-    const fsForm = document.getElementById('fs-form');
-    if (fsForm){
-      const status = document.getElementById('form-status');
-      fsForm.addEventListener('submit', async (e)=>{
-        e.preventDefault();
-        status.textContent = 'Sending…';
-        try{
-          const data = new FormData(fsForm);
-          const r = await fetch(fsForm.action, { method:'POST', body:data, headers:{'Accept':'application/json'}});
-          if (r.ok){
-            fsForm.reset();
-            status.innerHTML = '<span class="ok">Thanks — message sent.</span>';
-          } else {
-            status.innerHTML = '<span class="err">Send failed. Try email instead.</span>';
-          }
-        }catch(err){
-          status.innerHTML = '<span class="err">Network error. Try email instead.</span>';
-        }
-      });
-    }
-  </script>
 </body>
 </html>
