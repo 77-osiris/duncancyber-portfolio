@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Duncan Cyber · Portfolio</title>
+  <meta name="description" content="Cyber security portfolio of Stewart Duncan: projects, write-ups, and contact." />
+  <link rel="icon" type="image/png" href="assets/duncan_crest_neon.png">
+  <style>
+    :root{
+      --bg:#0b0f12; --card:#12171c; --muted:#9aa4ad; --text:#e8eef2; --accent:#00e5b5; --accent-2:#64ffda;
+      --border:#1c232a;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+         background:linear-gradient(180deg,#0a0e11,#0b0f12 30%,#0b0f12 100%); color:var(--text)}
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1100px; margin:0 auto; padding:24px}
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:10px 0 22px}
+    .brand{font-weight:700; letter-spacing:.5px}
+    nav a{margin-left:18px; color:var(--muted)}
+    nav a:hover{color:var(--text)}
+    .hero{display:grid; grid-template-columns:1.1fr .9fr; gap:28px; padding:36px 0 14px}
+    .card{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:22px}
+    .tag{font-size:.85rem; color:var(--accent-2)}
+    h1{margin:.3rem 0 0; font-size:2.2rem; line-height:1.15}
+    p.lead{color:var(--muted); margin:12px 0 18px}
+    .row{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:10px; border:1px solid var(--border); background:#0e1318; color:var(--text)}
+    .btn:hover{border-color:#23303a}
+    .btn.accent{background:var(--accent); color:#041b16; border-color:transparent; font-weight:600}
+    section{padding:28px 0}
+    h2{font-size:1.4rem; margin:0 0 12px}
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px}
+    .project h3{margin:.4rem 0 .3rem; font-size:1.05rem}
+    .project p{margin:.1rem 0 .4rem; color:var(--muted); font-size:.95rem}
+    .project .meta{font-size:.85rem; color:#b6c2cb}
+    form{display:grid; gap:10px; max-width:520px}
+    input, textarea{width:100%; padding:12px 13px; border-radius:10px; border:1px solid var(--border); background:#0e1318; color:var(--text)}
+    textarea{min-height:130px; resize:vertical}
+    .footer{color:#7d8891; font-size:.9rem; padding:26px 0 10px; text-align:center}
+    .ok{color:#a0f0c5} .err{color:#ffb3b3}
+    @media (max-width:880px){ .hero{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">DUNCAN CYBER</div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="assets/CV_SD_25.pdf" download>Download CV</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <div class="tag">Security Apprentice / Analyst Path</div>
+        <h1>Stewart Duncan — Cyber Security Portfolio</h1>
+        <p class="lead">
+          Learning-by-doing across networking, Linux, Python and web security.
+          Documented labs, small tools and write-ups as I progress toward SOC/OffSec roles.
+        </p>
+        <div class="row">
+          <a class="btn accent" href="assets/CV_SD_25.pdf" download>⬇ Download CV</a>
+          <a class="btn" href="https://github.com/77-osiris" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="mailto:stewart@duncancyber.tech">stewart@duncancyber.tech</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Focus</h2>
+        <ul>
+          <li>Networking fundamentals (TCP/IP, ports, packet flows)</li>
+          <li>Linux CLI + scripting (bash, Python)</li>
+          <li>Web security labs (auth, input validation, IDOR, SSRF)</li>
+          <li>Hands-on notes & mini-tools</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects & Labs</h2>
+      <div class="grid">
+        <!-- Project 1 -->
+        <a class="card project" href="https://github.com/your-github/bhp_tests" target="_blank" rel="noopener">
+          <h3>TCP/UDP Socket Mini-Lab</h3>
+          <p>Threaded TCP server and simple clients to observe connections, ports and handshake.</p>
+          <div class="meta">Python · sockets · threads</div>
+        </a>
+        <!-- Project 2 -->
+        <a class="card project" href="https://github.com/your-github/linux-cli-notes" target="_blank" rel="noopener">
+          <h3>Linux CLI Notes + One-liners</h3>
+          <p>Cheat-sheet of real commands (grep/sed/awk/xargs) with before/after examples.</p>
+          <div class="meta">Bash · text processing</div>
+        </a>
+        <!-- Project 3 -->
+        <a class="card project" href="https://github.com/your-github/web-sec-writeups" target="_blank" rel="noopener">
+          <h3>Web Security Write-ups</h3>
+          <p>Short lab reports: vuln summary → reproduction steps → fix/mitigation.</p>
+          <div class="meta">OWASP · labs</div>
+        </a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="lead">Prefer email? <a href="mailto:stewart@duncancyber.tech">stewart@duncancyber.tech</a></p>
+
+      <!-- FORM OPTION A (Formspree) -->
+      <!-- Replace action URL after you create a Formspree form -->
+      <form id="fs-form" action="https://formspree.io/f/yourFormID" method="POST">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="_replyto" placeholder="Your email" required />
+        <textarea name="message" placeholder="Your message..." required></textarea>
+        <input type="hidden" name="_subject" value="Portfolio contact" />
+        <button class="btn accent" type="submit">Send message</button>
+        <div id="form-status" aria-live="polite"></div>
+      </form>
+
+      <!-- If you prefer PHP instead, delete the form above and use the PHP version below. -->
+    </section>
+
+    <div class="footer">© <span id="y"></span> Stewart Duncan · duncancyber.tech</div>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // lightweight success/fail feedback for Formspree
+    const fsForm = document.getElementById('fs-form');
+    if (fsForm){
+      const status = document.getElementById('form-status');
+      fsForm.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        status.textContent = 'Sending…';
+        try{
+          const data = new FormData(fsForm);
+          const r = await fetch(fsForm.action, { method:'POST', body:data, headers:{'Accept':'application/json'}});
+          if (r.ok){
+            fsForm.reset();
+            status.innerHTML = '<span class="ok">Thanks — message sent.</span>';
+          } else {
+            status.innerHTML = '<span class="err">Send failed. Try email instead.</span>';
+          }
+        }catch(err){
+          status.innerHTML = '<span class="err">Network error. Try email instead.</span>';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
