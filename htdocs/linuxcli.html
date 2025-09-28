@@ -52,9 +52,11 @@
         <div class="brand">
         <span>DUNCAN CYBER</span>
         </div>
+      </div>
+      <!-- <div class="brand">DUNCAN CYBER</div> -->
       <nav>
         <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html#contact">Contact</a>
         <a href="assets/CV_SD_25.pdf" download>Download CV</a>
       </nav>
     </header>
@@ -88,10 +90,10 @@
       <h2>Projects & Labs</h2>
       <div class="grid">
         <!-- Project 1 -->
-        <a class="card project" href="https://github.com/your-github/bhp_tests" target="_blank" rel="noopener">
-          <h3>TCP/UDP Socket Mini-Lab</h3>
-          <p>Threaded TCP server and simple clients to observe connections, ports and handshake.</p>
-          <div class="meta">Python · sockets · threads</div>
+        <a class="card project" href="linuxcli.html" target="_blank" rel="noopener">
+          <h3>Linux CLI Notes</h3>
+          <p>Cheat-sheet of real commands with examples</p>
+          <div class="meta">Linux · Commands · Bash</div>
         </a>
         <!-- Project 2 -->
         <a class="card project" href="linuxcli.html" target="_blank" rel="noopener">
@@ -107,32 +109,6 @@
         </a>
       </div>
     </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p class="lead">Prefer email? <a href="mailto:stewart@duncancyber.tech">stewart@duncancyber.tech</a></p>
-
-      <form id="php-form" action="contact.php" method="POST">
-        <input type="text" name="name" placeholder="Your name" required />
-        <input type="email" name="email" placeholder="Your email" required />
-        <textarea name="message" placeholder="Your message..." required></textarea>
-        <button class="btn accent" type="submit">Send message</button>
-        <div id="form-status" aria-live="polite"></div>
-      </form>
-    </section>
-    
-    <script>
-    const f=document.getElementById('php-form'), s=document.getElementById('form-status');
-    f.addEventListener('submit', async (e)=>{
-      e.preventDefault(); s.textContent='Sending…';
-      try{
-        const r = await fetch(f.action, {method:'POST', body:new FormData(f)});
-        if(r.ok){ f.reset(); s.innerHTML='<span class="ok">Thanks — message sent.</span>'; }
-        else { s.innerHTML='<span class="err">Send failed. Email me instead.</span>'; }
-      }catch{ s.innerHTML='<span class="err">Network error.</span>'; }
-  });
-  </script>
-    <img src="counter.php" alt="" width="1" height="1" style="position:absolute;left:-9999px" aria-hidden="true">
     <div class="footer">© <span id="y"></span> Stewart Duncan · duncancyber.tech</div>
   </div>
 </body>
