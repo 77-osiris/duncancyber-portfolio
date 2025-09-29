@@ -1,115 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="styles.css">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Duncan Cyber · Portfolio</title>
-  <meta name="description" content="Cyber security portfolio of Stewart Duncan: projects, write-ups, and contact." />
   <link rel="icon" type="image/png" href="assets/neon_duncan_nobg.png">
-  <style>
-    :root{
-      --bg:#0b0f12; --card:#12171c; --muted:#9aa4ad; --text:#e8eef2; --accent:#00e5b5; --accent-2:#64ffda;
-      --border:#1c232a;
-    }
-    *{box-sizing:border-box}
-    body{margin:0; font-family:system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
-         background:linear-gradient(180deg,#0a0e11,#0b0f12 30%,#0b0f12 100%); color:var(--text)}
-    a{color:var(--accent); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:1100px; margin:0 auto; padding:24px}
-    header{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:10px 0 22px}
-    .brand{font-weight:700; letter-spacing:.5px}
-    nav a{margin-left:18px; color:var(--muted)}
-    nav a:hover{color:var(--text)}
-    .hero{display:grid; grid-template-columns:1.1fr .9fr; gap:28px; padding:36px 0 14px}
-    .card{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:22px}
-    .tag{font-size:.85rem; color:var(--accent-2)}
-    h1{margin:.3rem 0 0; font-size:2.2rem; line-height:1.15}
-    p.lead{color:var(--muted); margin:12px 0 18px}
-    .row{display:flex; gap:12px; flex-wrap:wrap}
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:10px; border:1px solid var(--border); background:#0e1318; color:var(--text)}
-    .btn:hover{border-color:#23303a}
-    .btn.accent{background:var(--accent); color:#041b16; border-color:transparent; font-weight:600}
-    section{padding:28px 0}
-    h2{font-size:1.4rem; margin:0 0 12px}
-    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px}
-    .project h3{margin:.4rem 0 .3rem; font-size:1.05rem}
-    .project p{margin:.1rem 0 .4rem; color:var(--muted); font-size:.95rem}
-    .project .meta{font-size:.85rem; color:#b6c2cb}
-    form{display:grid; gap:10px; max-width:520px}
-    input, textarea{width:100%; padding:12px 13px; border-radius:10px; border:1px solid var(--border); background:#0e1318; color:var(--text)}
-    textarea{min-height:130px; resize:vertical}
-    .footer{color:#7d8891; font-size:.9rem; padding:26px 0 10px; text-align:center}
-    .ok{color:#a0f0c5} .err{color:#ffb3b3}
-    @media (max-width:880px){ .hero{grid-template-columns:1fr} }
-  </style>
+  <title>Linux CLI Notes · Duncan Cyber</title>
+  <meta name="description" content="Personal cheat sheet for Linux command line essentials." />
 </head>
 <body>
   <div class="wrap">
-    <header style="display: flex; align-items: center; justify-content: space-between; padding: 10px 20px;">
-      <div style="display: flex; align-items: center; gap: 10px">
-        <img src="assets/neon_duncan_nobg.png" alt="logo" style="height: 50px; width: auto">
-        <div class="brand">
-        <span>DUNCAN CYBER</span>
-        </div>
-      </div>
-      <!-- <div class="brand">DUNCAN CYBER</div> -->
+    <header>
+      <div><a href="index.html">← Back to portfolio</a></div>
       <nav>
-        <a href="#projects">Projects</a>
+        <a href="index.html#projects">Projects</a>
         <a href="index.html#contact">Contact</a>
-        <a href="assets/CV_SD_25.pdf" download>Download CV</a>
       </nav>
     </header>
 
-    <section class="hero">
-      <div class="card">
-        <div class="tag">Security Apprentice / Analyst Path</div>
-        <h1>Stewart Duncan — Cyber Security Portfolio</h1>
-        <p class="lead">
-          Learning-by-doing across networking, Linux, Python and web security.
-          Documented labs, small tools and write-ups as I progress toward SOC/OffSec roles.
-        </p>
-        <div class="row">
-          <a class="btn accent" href="assets/CV_SD_25.pdf" download>⬇ Download CV</a>
-          <a class="btn" href="https://github.com/77-osiris" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="mailto:stewart@duncancyber.tech">➥ Send me an Email</a>
-        </div>
-      </div>
-      <div class="card">
-        <h2>Focus</h2>
-        <ul>
-          <li>Networking fundamentals (TCP/IP, ports, packet flows)</li>
-          <li>Linux CLI + scripting (bash, Python)</li>
-          <li>Web security labs (auth, input validation, IDOR, SSRF)</li>
-          <li>Hands-on notes & mini-tools</li>
-        </ul>
-      </div>
-    </section>
+    <h1>Linux CLI Notes</h1>
+    <p class="muted">
+      A personal cheat sheet for Linux command line essentials — organised by topic with commands,
+      descriptions, and examples. Updated as I progress through <em>The Linux Command Line</em>.
+    </p>
 
-    <section id="projects">
-      <h2>Projects & Labs</h2>
-      <div class="grid">
-        <!-- Project 1 -->
-        <a class="card project" href="linuxcli.html" target="_blank" rel="noopener">
-          <h3>Linux CLI Notes</h3>
-          <p>Cheat-sheet of real commands with examples</p>
-          <div class="meta">Linux · Commands · Bash</div>
-        </a>
-        <!-- Project 2 -->
-        <a class="card project" href="linuxcli.html" target="_blank" rel="noopener">
-          <h3>Linux CLI Notes + One-liners</h3>
-          <p>Cheat-sheet of real commands (grep/sed/awk/xargs) with before/after examples.</p>
-          <div class="meta">Bash · text processing</div>
-        </a>
-        <!-- Project 3 -->
-        <a class="card project" href="https://github.com/your-github/web-sec-writeups" target="_blank" rel="noopener">
-          <h3>Web Security Write-ups</h3>
-          <p>Short lab reports: vuln summary → reproduction steps → fix/mitigation.</p>
-          <div class="meta">OWASP · labs</div>
-        </a>
-      </div>
-    </section>
-    <div class="footer">© <span id="y"></span> Stewart Duncan · duncancyber.tech</div>
+    <div class="card">
+      <h2>Navigation</h2>
+      <ul>
+        <li><strong>cd</strong> – change directory</li>
+      </ul>
+<pre><code>
+cd ..         # up one directory
+cd /etc       # go to /etc
+cd /usr/bin   # go to /usr/bin
+cd ~          # current user's home
+cd ~&dollar;USER     # specified user's home (if readable)
+</code></pre>
+
+      <ul>
+        <li><strong>ls</strong> – list directories/files</li>
+      </ul>
+<pre><code>
+ls -l     # long list
+ls -la    # include hidden files
+ls -li    # show inode numbers
+</code></pre>
+
+      <ul>
+        <li><strong>pwd</strong> – print working directory</li>
+      </ul>
+<pre><code>pwd
+</code></pre>
+    </div>
+
+    <div class="card">
+      <h2>File Control & Manipulation</h2>
+<pre><code>
+mkdir NAME           # create directory
+mkdir -p a/b/c       # create nested dirs
+
+touch FILE           # create empty file or update mtime
+
+rm FILE              # remove file
+rm -r DIR            # remove directory recursively (careful)
+rmdir DIR            # remove empty directory
+
+nano FILE            # open in nano (creates if missing)
+
+cp SRC DEST          # copy file
+cp -r SRCDIR DEST    # copy directory recursively
+
+mv OLD NEW           # move/rename (does NOT edit files)
+</code></pre>
+    </div>
+
+    <div class="card">
+      <h2>Searching</h2>
+<pre><code>
+# find files/dirs by name/type starting at PATH
+find PATH -name "pattern"           # by name
+find PATH -type f -name "*.log"     # only files
+find PATH -type d -name "conf*"     # only directories
+
+# grep strings in files
+grep "text" FILE
+grep -i "text" FILE                 # ignore case
+grep -r "text" DIR                  # recurse directory
+</code></pre>
+    </div>
+
+    <div class="card">
+      <h2>Linking</h2>
+<pre><code>
+ln TARGET LINKNAME            # hard link
+ln -s /path/target symlink    # symbolic link
+</code></pre>
+    </div>
+
+    <div class="card">
+      <h2>Output & Redirection</h2>
+<pre><code>
+cmd &gt; out.txt            # stdout to file (overwrite)
+cmd &gt;&gt; out.txt           # stdout append
+cmd 2&gt; err.txt           # stderr to file (overwrite)
+cmd 2&gt;&gt; err.txt          # stderr append
+cmd &amp;&gt; all.txt           # stdout+stderr (bash)
+# portable equivalent:
+cmd &gt; all.txt 2&gt;&amp;1
+
+cmd1 | cmd2              # pipe cmd1 stdout into cmd2
+
+# tee: write to file AND pass through
+cmd | tee out.txt | cmd2
+cmd | tee -a out.txt     # append
+</code></pre>
+    </div>
+
+    <div class="card">
+      <h2>Help & Documentation</h2>
+<pre><code>
+man CMD                  # open manual
+whatis CMD               # one-line description
+</code></pre>
+      <p class="muted">
+        <strong>man</strong> 
+        sections: 
+        <li>1 - user cmds</li> 
+        <li>2 - system calls</li> 
+        <li>3 - C library</li>
+        <li>4 - special files</li>
+        <li>5 - file formats</li>
+        <li>6 - games</li>
+        <li>7 - misc</li>
+        <li>8 - admin cmds</li>
+      </p>
+    </div>
+
+    <p class="muted" style="margin:18px 0 60px;">
+      Found an error or want to see a new example? Open a PR on GitHub.
+    </p>
   </div>
 </body>
 </html>
