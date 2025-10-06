@@ -51,6 +51,7 @@ header {
     letter-spacing: .5px
 }
 
+
 nav a {
     margin-left: 18px;
     color: var(--muted)
@@ -58,6 +59,13 @@ nav a {
 
 nav a:hover {
     color: var(--text)
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
 }
 
 .hero {
@@ -190,11 +198,11 @@ p,li{
 }
 
 code{
-    background:#0e1318;border:1px solid var(--border);border-radius:8px;padding:0 .35rem
+    background:#0e1318;border:1px solid var(--border);border-radius:8px;padding:0 .35rem;
 }
 
 pre{
-    background:#0e1318;border:1px solid var(--border);border-radius:10px;padding:12px;overflow:auto
+    background:#0e1318;border:1px solid var(--border);border-radius:10px;padding:12px;overflow:auto;
 }
 
 ul{
@@ -205,8 +213,34 @@ ul{
     color:var(--muted)
 }
 
+/* TryHackMe badge */
+.thm-wrap { /* if this sits in a flex/grid column, allow it to shrink */
+  min-width: 0;
+}
+
+.thm-badge {
+  display: block;      /* removes the baseline gap under inline iframes */
+  width: 428px;        /* badge’s natural size */
+  height: 86px;        /* prevents the big blank space/scrollbar */
+  border: 0;           /* no border */
+  overflow: hidden;    /* hide any tiny internal scrollbars just in case */
+}
+
 @media (max-width:880px) {
     .hero {
         grid-template-columns: 1fr
+    }
+    .thm-wrap {
+    width: 100%;
+    height: calc(86px * (100vw / 428));
+    overflow: hidden;
+    position: relative;
+    }
+    .thm-badge {
+    position: absolute;
+    top: 0; left: 0;
+    width: 428px; height: 86px;
+    transform-origin: top left;
+    transform: scale(calc(100vw / 428));
     }
 }

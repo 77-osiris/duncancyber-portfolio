@@ -19,6 +19,7 @@
       <nav>
         <a href="index.html#projects">Projects</a>
         <a href="index.html#contact">Contact</a>
+        <a href="assets/CV_SD_25.pdf" download>Download CV</a>
       </nav>
     </header>
 
@@ -33,116 +34,254 @@
       <ul>
         <li><strong>cd</strong> – change directory</li>
       </ul>
-<pre><code>
-cd ..         # up one directory
-cd /etc       # go to /etc
-cd /usr/bin   # go to /usr/bin
-cd ~          # current user's home
-cd ~&dollar;USER     # specified user's home (if readable)
-</code></pre>
+<pre>
+<code>cd ..</code>         # up one directory
+<code>cd /etc</code>       # go to /etc
+<code>cd /usr/bin</code>   # go to /usr/bin
+<code>cd ~</code>          # current user's home
+<code>cd ~&dollar;USER</code>     # specified user's home (if readable)
+</pre>
 
       <ul>
         <li><strong>ls</strong> – list directories/files</li>
       </ul>
-<pre><code>
-ls -l     # long list
-ls -la    # include hidden files
-ls -li    # show inode numbers
-</code></pre>
+<pre>
+<code>ls -l</code>     # long list
+<code>ls -la</code>    # include hidden files
+<code>ls -li</code>    # show inode numbers
+</pre>
 
       <ul>
         <li><strong>pwd</strong> – print working directory</li>
       </ul>
 <pre><code>pwd
 </code></pre>
+      <ul>
+        <li><strong>ALT/CTRL/A-z</strong> – alt and ctrl key shortcuts</li>
+      </ul>
+<pre>
+<code>CTRL-A</code>         # Move cursor to the beginning of the line
+<code>CTRL-E</code>         # Move cursor to the end of the line
+<code>CTRL-F/→</code>       # Move cursor forward one character; same as right → key
+<code>CTRL-B/←</code>       # Move cursor back one character; same as left ← key
+<code>ALT-F</code>          # Move cursor forward one word
+<code>ALT-B</code>          # Move cursor back one word
+<code>CTRL-L</code>         # Clear the screen and move the cursor to the top-left
+                              corner. Same as <strong>clear</strong> command.
+<code>CTRL-D</code>         # Delete the character at the cursor location 
+<code>CTRL-T</code>         # Transpose the character at the cursor location with 
+                              the one preceeding it.
+<code>ALT-T</code>          # Transpose the word at the cursor location with the 
+                              word preceeding it.
+<code>ALT-U</code>          # Convert the characters from the cursor location 
+                              to the end of the word to uppercase.
+<code>CTRL-K</code>         # Kill text from cursor location to the end of the line
+<code>CTRL-U</code>         # Kill text from cursor to beginning of the line
+<code>ALT-D</code>          # Kill text from cursor location to end of current word
+<code>ALT-Backspace</code>  # Kill text from cursor location to the beginning 
+                              of the current word. If the cursor is at the 
+                              beginning of a word, kill the previous word.
+<code>CTRL-Y</code>         # Yank text from the kill-ring and insert it at the
+                              cursor location.
+
+</pre>
     </div>
 
     <div class="card">
-      <h2>File Control & Manipulation</h2>
-<pre><code>
-mkdir NAME           # create directory
-mkdir -p a/b/c       # create nested dirs
+      <h2>File Control &amp; Manipulation</h2>
+      <ul>
+        <li><strong>mkdir</strong> – make new directory</li>
+      </ul>
+<pre>
+<code>mkdir</code> NAME           # create directory
+<code>mkdir -p</code> dir/newdir  # create nested dirs
+</pre>
 
-touch FILE           # create empty file or update mtime
+      <ul>
+        <li><strong>touch</strong> – create new empty file</li>
+      </ul>
+<pre>
+<code>touch</code> FILE           # create empty file or update mtime
+</pre>
 
-rm FILE              # remove file
-rm -r DIR            # remove directory recursively (careful)
-rmdir DIR            # remove empty directory
+      <ul>
+        <li><strong>rm</strong> – remove files/directories</li>
+      </ul>
+<pre>
+<code>rm</code> FILE              # remove file
+<code>rm -r</code> DIR            # remove directory recursively (careful)
+</pre>
 
-nano FILE            # open in nano (creates if missing)
+      <ul>
+        <li><strong>rmdir</strong> – remove empty directory</li>
+      </ul>
+<pre>
+<code>rmdir</code> DIR            # remove empty directory
+</pre>
 
-cp SRC DEST          # copy file
-cp -r SRCDIR DEST    # copy directory recursively
+      <ul>
+        <li><strong>nano</strong> – edit file (creates if missing)</li>
+      </ul>
+<pre>
+<code>nano</code> FILE            # open in nano (creates if missing)
+</pre>
 
-mv OLD NEW           # move/rename (does NOT edit files)
-</code></pre>
+      <ul>
+        <li><strong>cp</strong> – copy files/directories</li>
+      </ul>
+<pre>
+<code>cp</code> SRC DEST          # copy file
+<code>cp -r</code> SRCDIR DEST    # copy directory recursively
+</pre>
+
+      <ul>
+        <li><strong>mv</strong> – move/rename</li>
+      </ul>
+<pre>
+<code>mv</code> OLD NEW           # move/rename (does NOT edit files)
+</pre>
     </div>
 
     <div class="card">
       <h2>Searching</h2>
-<pre><code>
-# find files/dirs by name/type starting at PATH
-find PATH -name "pattern"           # by name
-find PATH -type f -name "*.log"     # only files
-find PATH -type d -name "conf*"     # only directories
 
-# grep strings in files
-grep "text" FILE
-grep -i "text" FILE                 # ignore case
-grep -r "text" DIR                  # recurse directory
-</code></pre>
+      <ul>
+        <li><strong>find</strong> – search filesystem by name/type</li>
+      </ul>
+<pre>
+<code>find</code> PATH -name "pattern"           # by name
+<code>find</code> PATH -type f -name "*.log"     # only files
+<code>find</code> PATH -type d -name "conf*"     # only directories
+</pre>
+
+      <ul>
+        <li><strong>grep</strong> – search text in files</li>
+      </ul>
+<pre>
+<code>grep</code> "text" FILE
+<code>grep -i</code> "text" FILE                 # ignore case
+<code>grep -r</code> "text" DIR                  # recurse directory
+</pre>
     </div>
 
     <div class="card">
       <h2>Linking</h2>
-<pre><code>
-ln TARGET LINKNAME            # hard link
-ln -s /path/target symlink    # symbolic link
-</code></pre>
+
+      <ul>
+        <li><strong>ln</strong> – create hard/symbolic links</li>
+      </ul>
+<pre>
+<code>ln</code> TARGET LINKNAME             # hard link
+<code>ln -s</code> /path/target symlink     # symbolic link
+</pre>
     </div>
 
     <div class="card">
-      <h2>Output & Redirection</h2>
-<pre><code>
-cmd &gt; out.txt            # stdout to file (overwrite)
-cmd &gt;&gt; out.txt           # stdout append
-cmd 2&gt; err.txt           # stderr to file (overwrite)
-cmd 2&gt;&gt; err.txt          # stderr append
-cmd &amp;&gt; all.txt           # stdout+stderr (bash)
+      <h2>Output &amp; Redirection</h2>
+
+      <ul>
+        <li><strong>redirection</strong> – send stdout/stderr to files</li>
+      </ul>
+<pre>
+<code>cmd &gt; out.txt</code>             # stdout to file (overwrite)
+<code>cmd &gt;&gt; out.txt</code>            # stdout append
+<code>cmd 2&gt; err.txt</code>            # stderr to file (overwrite)
+<code>cmd 2&gt;&gt; err.txt</code>           # stderr append
+<code>cmd &amp;&gt; all.txt</code>            # stdout+stderr (bash)
 # portable equivalent:
-cmd &gt; all.txt 2&gt;&amp;1
+<code>cmd &gt; all.txt 2&gt;&amp;1</code>
+</pre>
 
-cmd1 | cmd2              # pipe cmd1 stdout into cmd2
+      <ul>
+        <li><strong>pipe</strong> – chain commands</li>
+      </ul>
+<pre>
+<code>cmd1 | cmd2</code>               # pipe cmd1 stdout into cmd2
+</pre>
 
-# tee: write to file AND pass through
-cmd | tee out.txt | cmd2
-cmd | tee -a out.txt     # append
-</code></pre>
+      <ul>
+        <li><strong>tee</strong> – write to file and pass through</li>
+      </ul>
+<pre>
+<code>cmd | tee</code> out.txt | cmd2
+<code>cmd | tee -a</code> out.txt      # append
+</pre>
     </div>
 
     <div class="card">
-      <h2>Help & Documentation</h2>
-<pre><code>
-man CMD                  # open manual
-whatis CMD               # one-line description
-</code></pre>
-      <p class="muted">
-        <strong>man</strong> 
-        sections: 
-        <li>1 - user cmds</li> 
-        <li>2 - system calls</li> 
-        <li>3 - C library</li>
-        <li>4 - special files</li>
-        <li>5 - file formats</li>
-        <li>6 - games</li>
-        <li>7 - misc</li>
-        <li>8 - admin cmds</li>
-      </p>
+      <h2>Help &amp; Documentation</h2>
+
+      <ul>
+        <li><strong>man</strong> – open manual</li>
+      </ul>
+<pre>
+<code>man</code> CMD
+</pre>
+
+      <ul>
+        <li><strong>whatis</strong> – one-line description</li>
+      </ul>
+<pre>
+<code>whatis</code> CMD
+</pre>
+
+      <ul>
+        <li><strong>man sections</strong> – section numbers</li>
+      </ul>
+      <ul class="muted">
+        <li>1 — user cmds</li>
+        <li>2 — system calls</li>
+        <li>3 — C library</li>
+        <li>4 — special files</li>
+        <li>5 — file formats</li>
+        <li>6 — games</li>
+        <li>7 — misc</li>
+        <li>8 — admin cmds</li>
+      </ul>
     </div>
 
-    <p class="muted" style="margin:18px 0 60px;">
+    <!--<p class="muted" style="margin:18px 0 60px;">
       Found an error or want to see a new example? Open a PR on GitHub.
-    </p>
+    </p>-->
+
+    <section id="Exploitation">
+      <div class="card">
+        <h2>Discovery and Exploration</h2>
+
+        <ul>
+          <li><strong>nmap</strong> – network exploration &amp; port scanner</li>
+        </ul>
+<pre>
+<code>nmap</code> -sO              # IP protocol scan: which protocols host supports
+<code>nmap</code> -sn              # Ping scan: host discovery only (skip port scan)
+<code>nmap</code> -sL              # List scan (no packets to targets)
+<code>nmap</code> -sT              # TCP connect(): full 3-way handshake
+<code>nmap</code> -sS              # TCP SYN (half-open) scan
+<code>nmap</code> -sU              # UDP scan
+<code>nmap</code> -sV              # Service version detection
+<code>nmap</code> -F               # Fast scan (top 100 ports)
+<code>nmap</code> -p80,443         # specific ports
+<code>nmap</code> -p1-1024         # port range
+<code>nmap</code> -p-              # all ports
+<code>nmap</code> -O               # OS detection
+<code>nmap</code> -A               # Aggressive: OS/version/scripts/traceroute
+<code>nmap</code> -Pn              # Treat all hosts as online; skip host discovery
+<code>nmap</code> -T&lt;0-5&gt;         # Timing: paranoid(0)…insane(5)
+<code>nmap</code> -v                # verbose (repeat v up to -vvvv)
+<code>nmap</code> -d                # debug   (up to -d9)
+<code>nmap</code> -oN scan.txt      # normal output
+<code>nmap</code> -oX scan.xml      # XML output
+<code>nmap</code> -oG scan.grep     # grepable output
+<code>nmap</code> -oA prefix        # all major formats with a prefix
+
+# performance tuning
+<code>nmap</code> --min-parallelism &lt;num&gt;  --max-parallelism &lt;num&gt;
+<code>nmap</code> --min-rate &lt;pps&gt;         --max-rate &lt;pps&gt;
+<code>nmap</code> --host-timeout &lt;time&gt;
+</pre>
+      </div>
+    </section>
+
   </div>
 </body>
 </html>
