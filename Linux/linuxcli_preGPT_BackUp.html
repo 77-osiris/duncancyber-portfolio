@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/png" href="assets/neon_duncan_nobg.png">
+  <title>Linux CLI Notes · Duncan Cyber</title>
+  <link rel="icon" type="image/png" href="assets/neon_duncan_nobg.png">
+  <meta name="description" content="Personal cheat sheet for Linux command line essentials." />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div><a href="index.html">← Back to portfolio</a></div>
+      <div class="brand">
+        <a href="index.html"><span>DUNCAN CYBER</span></a>
+      </div>
+      <nav>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="assets/CV_SD_25.pdf" download>Download CV</a>
+      </nav>
+    </header>
+
+    <h1>Linux CLI Notes</h1>
+    <p class="muted">
+      A personal cheat sheet for Linux command line essentials — organised by topic with commands,
+      descriptions, and examples. Updated as I progress through <em>The Linux Command Line</em>.
+    </p>
+
+    <div class="card">
+      <h2>Navigation</h2>
+      <ul>
+        <li><strong>cd</strong> – change directory</li>
+      </ul>
+<pre>
+<code>cd ..</code>         # up one directory
+<code>cd /etc</code>       # go to /etc
+<code>cd /usr/bin</code>   # go to /usr/bin
+<code>cd ~</code>          # current user's home
+<code>cd ~&dollar;USER</code>     # specified user's home (if readable)
+</pre>
+
+      <ul>
+        <li><strong>ls</strong> – list directories/files</li>
+      </ul>
+<pre>
+<code>ls -l</code>     # long list
+<code>ls -la</code>    # include hidden files
+<code>ls -li</code>    # show inode numbers
+</pre>
+
+      <ul>
+        <li><strong>pwd</strong> – print working directory</li>
+      </ul>
+<pre><code>pwd
+</code></pre>
+      <ul>
+        <li><strong>ALT/CTRL/A-z</strong> – alt and ctrl key shortcuts</li>
+      </ul>
+<pre>
+<code>CTRL-A</code>     # Move cursor to the beginning of the line
+<code>CTRL-E</code>     # Move cursor to the end of the line
+<code>CTRL-F/→</code>   # Move cursor forward one character; same as right → key
+<code>CTRL-B/←</code>   # Move cursor back one character; same as left ← key
+<code>ALT-F</code>      # Move cursor forward one word
+<code>ALT-B</code>      # Move cursor back one word
+<code>CTRL-L</code>     # Clear the screen and move the cursor to the top-left
+                          corner. Same as <strong>clear</strong> command.
+</pre>
+    </div>
+
+    
+    <div class="card">
+      <h2>File Control & Manipulation</h2>
+      <ul>
+        <li><strong>mkdir</strong> – make new directory</li>
+      </ul>
+<pre>
+<code>mkdir</code> NAME           # create directory
+<code>mkdir -p</code> dir/newdir  # create nested dirs
+</pre>
+      <ul>
+        <li><strong>touch</strong> – create new empty file </li>
+      </ul>
+<pre>
+<code>touch</code> FILE           # create empty file or update mtime
+</pre>
+      <ul>
+        <li><strong>rm</strong> – create new empty file </li>
+      </ul>
+<pre>
+<code>rm</code> FILE              # remove file
+<code>rm -r</code> DIR            # remove directory recursively (careful)
+</pre>      
+      <ul>
+        <li><strong>rmdir</strong> – create new empty file </li>
+      </ul>
+<pre>
+<code>rmdir</code> DIR            # remove empty directory
+</pre>
+      <ul>
+        <li><strong>nano</strong> – create new empty file </li>
+      </ul>
+<pre>
+<code>nano</code> FILE            # open in nano (creates if missing)
+</pre>
+      <ul>
+        <li><strong>cp</strong> – create new empty file </li>
+      </ul>
+<pre>
+<code>cp</code> SRC DEST          # copy file
+<code>cp -r</code> SRCDIR DEST    # copy directory recursively
+</pre>
+      <ul>
+        <li><strong>mv</strong> – create new empty file </li>
+      </ul>
+<pre>
+<code>mv</code> OLD NEW           # move/rename (does NOT edit files)
+</pre>
+    </div>
+
+    <div class="card">
+      <h2>Searching</h2>
+<pre>
+# find files/dirs by name/type starting at PATH
+<code>find PATH -name </code>"pattern"           # by name
+<code>find PATH -type f -name</code> "*.log"     # only files
+<code>find PATH -type d -name</code> "conf*"     # only directories
+
+# grep strings in files
+<code>grep</code> "text" FILE
+<code>grep -i</code> "text" FILE                 # ignore case
+<code>grep -r</code> "text" DIR                  # recurse directory
+</pre>
+    </div>
+
+    <div class="card">
+      <h2>Linking</h2>
+<pre>
+<code>ln TARGET LINKNAME</code>            # hard link
+<code>ln -s /path/target symlink</code>    # symbolic link
+</pre>
+    </div>
+
+    <div class="card">
+      <h2>Output & Redirection</h2>
+<pre>
+<code>cmd &gt; out.txt</code>            # stdout to file (overwrite)
+<code>cmd &gt;&gt; out.txt</code>           # stdout append
+<code>cmd 2&gt; err.txt</code>           # stderr to file (overwrite)
+<code>cmd 2&gt;&gt; err.txt</code>          # stderr append
+<code>cmd &amp;&gt; all.txt</code>           # stdout+stderr (bash)
+# portable equivalent:
+<code>cmd &gt; all.txt 2&gt;&amp;1</code>
+
+<code>cmd1 | cmd2</code>              # pipe cmd1 stdout into cmd2
+
+# tee: write to file AND pass through
+<code>cmd | tee out.txt | cmd2</code>
+<code>cmd | tee -a out.txt</code>     # append
+</pre>
+    </div>
+
+    <div class="card">
+      <h2>Help & Documentation</h2>
+<pre>
+<code>man CMD</code>                  # open manual
+<code>whatis CMD</code>               # one-line description
+</pre>
+      <p class="muted">
+        <strong>man</strong> 
+        sections: 
+        <li>1 - user cmds</li> 
+        <li>2 - system calls</li> 
+        <li>3 - C library</li>
+        <li>4 - special files</li>
+        <li>5 - file formats</li>
+        <li>6 - games</li>
+        <li>7 - misc</li>
+        <li>8 - admin cmds</li>
+      </p>
+    </div>
+
+    <p class="muted" style="margin:18px 0 60px;">
+      Found an error or want to see a new example? Open a PR on GitHub.
+    </p>
+    
+  <section id="Exploitation">
+    <div class="card">
+      <h2>Discovery and Exploration</h2>
+<pre><code>
+<h3>nmap</h3>   
+  Network exploration tool and security / port scanner
+
+  -sO           # IP scan to check which IP protocols are supported by the host
+  -sn           # Ping scan - Check for hosts only using ICMP/TCP/ARP/etc - but skip port scanning
+  -sL           # List scan 
+  -sT           # TCP 3-Way handshake on every port and drop the connection if established
+  -sS           # TCP SYN only first step of 3-Way handshake and then RST 
+  -sU           # UDP scan
+  -sV           # Service version detection
+  -F            # Fast scan of only first 100 ports
+  -p[range]     # -p-25 (1-25) -p 80 (only port 80) -p- (all ports) -p200-2000 (ports 200 to 2000)
+  -O            # OS detections
+  -A            # OS, Version and other detections and additions 
+  -Pn           # Force scan of all hosts including ones appearing to be down
+  -T&lt0-5&gt       # Speed of scans -paranoid (0), sneaky (1), polite (2), normal (3), aggressive (4), and insane (5)
+  -v(vvvv)      # verbpse output up to vvvv
+  -d            # debugging output up to -d9
+  -oN filename  # normal output
+  -oX filename	# XML output
+  -oG filename  # grep-able output
+  -oA filename  # output in all major formats
+  
+  --min-parallelism &ltnumprobes&gt and --max-parallelism &ltnumprobes&gt     # minimum and maximum number of parallel probes
+  --min-rate &ltnumber&gt and --max-rate &ltnumber&gt                         # minimum and maximum rate (packets/second)
+  --host-timeout                                                      # maximum amount of time to wait for a target host
+</code></pre>
+    </div>
+  </section>
+
+
+  </div>
+</body>
+</html>

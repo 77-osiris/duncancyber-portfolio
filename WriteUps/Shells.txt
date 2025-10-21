@@ -1,0 +1,17 @@
+Shells are commonly used to control remote systems, making them a vital part of the attack chain.
+A shell is a piece of software a user can utilise to communicate with an OS through a series of commands. 
+A shell can also be used with a GUI.
+
+In cyber security a shell is commonly referenced when discussing a particular session on a compromised system.
+
+Attackers can execute a few different attacks when utilising a hsell such as :
+	- Remote systel control, allowing for remote control of the target system through commands or software 
+	- Privilege escalation, if the shell user is limited as to how much of the system they are able to interact with 
+		pivoting around to find ways to escalate privileges gives elevated access such as administrator/root
+	- Data exfiltration, once inside the system with file access an attacker can read and copy the data 
+	- Persistence or Maintenance Access, once a shell is obtained the attacker can maintain a presence through creation 
+		of a new user profile and its associated credentials or copy backdoor software to maintain access to the target system
+	- Post-Exploitation activities, after gaining access an attacker can install malware, create hidden accounts and delete/exfiltrate data
+	- Access other systems on the network, once access to a network is obtained through one host, an attacker can use it as an initial access point 
+		and hop through the network to other targets
+

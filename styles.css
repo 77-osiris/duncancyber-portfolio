@@ -67,36 +67,6 @@ nav a:hover {
     align-items: center;
     padding: 10px 20px;
 }
-/* Layout for header */
-.site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-}
-
-/* Logo + text side by side */
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* Logo sizing */
-.logo-img {
-  height: 50px;
-  width: auto;
-  display: block;
-}
-
-/* Text styling */
-.brand-text {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #fff;           /* adjust as needed */
-  letter-spacing: 1px;
-  text-decoration: none;
-}
 
 .hero {
     display: grid;

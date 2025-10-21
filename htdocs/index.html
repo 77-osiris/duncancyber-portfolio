@@ -10,11 +10,11 @@
 </head>
 <body>
   <div class="wrap">
-    <header style="display: flex; align-items: center; justify-content: space-between; padding: 10px 20px;">
-      <div style="display: flex; align-items: center; gap: 10px">
-        <a class="logo" href="index.html"><img src="assets/neon_duncan_nobg.png" alt="logo" style="height: 50px; width: auto"></a>
+    <header class="site-header">
+      <div class="header-left">
+        <a class="logo" href="index.html"><img src="assets/neon_duncan_nobg.png" alt="logo" class="logo-img"></a>
         <div class="brand">
-          <a href="index.html"><span>DUNCAN CYBER</span></a>
+          <a href="index.html" class="brand-text"><span>DUNCAN CYBER</span></a>
         </div>
       </div>  
       <nav class="navbar">
@@ -89,16 +89,8 @@
       </form>
     </section>
     
-    <script>
-    const f=document.getElementById('php-form'), s=document.getElementById('form-status');
-    f.addEventListener('submit', async (e)=>{
-      e.preventDefault(); s.textContent='Sending…';
-      try{
-        const r = await fetch(f.action, {method:'POST', body:new FormData(f)});
-        if(r.ok){ f.reset(); s.innerHTML='<span class="ok">Thanks — message sent.</span>'; }
-        else { s.innerHTML='<span class="err">Send failed. Email me instead.</span>'; }
-      }catch{ s.innerHTML='<span class="err">Network error.</span>'; }
-  });
+  <script>
+function _0x2451(_0x2083d6,_0x5674ed){const _0x20b77f=_0x20b7();return _0x2451=function(_0x245156,_0x5a2409){_0x245156=_0x245156-0xf4;let _0x214842=_0x20b77f[_0x245156];return _0x214842;},_0x2451(_0x2083d6,_0x5674ed);}const _0x9ce828=_0x2451;(function(_0x4599d7,_0x45203c){const _0x5a340b=_0x2451,_0x52ea9b=_0x4599d7();while(!![]){try{const _0x4263e6=parseInt(_0x5a340b(0xf6))/0x1*(parseInt(_0x5a340b(0xfb))/0x2)+-parseInt(_0x5a340b(0x103))/0x3+-parseInt(_0x5a340b(0x100))/0x4*(parseInt(_0x5a340b(0xfc))/0x5)+-parseInt(_0x5a340b(0x102))/0x6+parseInt(_0x5a340b(0x106))/0x7*(-parseInt(_0x5a340b(0x105))/0x8)+-parseInt(_0x5a340b(0xf9))/0x9+parseInt(_0x5a340b(0xf8))/0xa;if(_0x4263e6===_0x45203c)break;else _0x52ea9b['push'](_0x52ea9b['shift']());}catch(_0x17e219){_0x52ea9b['push'](_0x52ea9b['shift']());}}}(_0x20b7,0x705e8));function _0x20b7(){const _0x2951a0=['form-status','<span\x20class=\x22ok\x22>Thanks\x20—\x20message\x20sent.</span>','32340fMamGI','reset','4735896XivUCw','378471vsPwAU','<span\x20class=\x22err\x22>Send\x20failed.\x20Email\x20me\x20instead.</span>','400XFNjfk','109291zAnjrY','submit','POST','<span\x20class=\x22err\x22>Network\x20error.</span>','16fBlMOW','addEventListener','28160320TegGHE','5773086JwNwjD','innerHTML','758sLkBYQ','15JiDXEC','getElementById'];_0x20b7=function(){return _0x2951a0;};return _0x20b7();}const f=document[_0x9ce828(0xfd)]('php-form'),s=document[_0x9ce828(0xfd)](_0x9ce828(0xfe));f[_0x9ce828(0xf7)](_0x9ce828(0x107),async _0x104805=>{const _0x14981b=_0x9ce828;_0x104805['preventDefault'](),s['textContent']='Sending…';try{const _0x17e88f=await fetch(f['action'],{'method':_0x14981b(0xf4),'body':new FormData(f)});_0x17e88f['ok']?(f[_0x14981b(0x101)](),s['innerHTML']=_0x14981b(0xff)):s[_0x14981b(0xfa)]=_0x14981b(0x104);}catch{s[_0x14981b(0xfa)]=_0x14981b(0xf5);}});
   </script>
     <img src="counter.php" alt="" width="1" height="1" style="position:absolute;left:-9999px" aria-hidden="true">
     <div class="footer">© <span id="y"></span> Stewart Duncan · duncancyber.tech</div>
