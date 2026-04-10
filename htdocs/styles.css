@@ -243,6 +243,16 @@ ul{
     color:var(--muted)
 }
 
+.sig-container {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.sig-container img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* TryHackMe badge */
 .thm-wrap { /* if this sits in a flex/grid column, allow it to shrink */
   min-width: 0;

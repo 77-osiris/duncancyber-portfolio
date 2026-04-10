@@ -1,4 +1,4 @@
-Header set Content-Security-Policy "default-src 'none'; base-uri 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests" 
+Header set Content-Security-Policy "default-src 'none'; base-uri 'self'; frame-src 'self' https://tryhackme.com; script-src 'self'; style-src 'self' 'unsafe-hashes' 'sha256-FUawOlTVVeozychtrKT63nhCi9UBMIhL83cYYErv1oM='; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests" 
 
 Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 
