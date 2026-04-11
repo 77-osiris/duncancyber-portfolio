@@ -1,6 +1,6 @@
 <?php
 // ==== CONFIG ====
-$password = "MySecretPassword";   // change this!
+
 
 // ==== LOGIN CHECK ====
 session_start();
